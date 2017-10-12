@@ -1,0 +1,6 @@
+rules:
+    numberOfShots:
+        Double Shots: You make shots in pairs (two at a time)
+    shotStyle:
+        Via the Cushion: Everyshot must bounce off a cushion before hitting a ball
+        Behind the back: All shots must be taken behind the back

@@ -1,0 +1,82 @@
+parameters:
+    # Only one option per sub array will be picked, this prevents clashes
+    rules:
+        -
+            - "Rackup must be symmetrical"
+            - "The black is missing from the break, then readded on the spot afterwards"
+            - "Rackup must be sideways"
+            - "Rackup must be on the cushion"
+            - "Rackup must be in the middle of the table"
+            - "On the break, the cue ball is placed behide the rack"
+        -
+            - "You make shots in pairs (two at a time)"
+            - "You make shots in triples (three at a time)"
+        -
+            - "All shots must include a cushion hit"
+            - "The cue ball must hit a cushion, if you pot"
+            - "The cue ball must hit a cushion, on every shot"
+            - "Any potted ball must hit a cushion, if you pot"
+            - "Instead of having another shot on a foul, the opponent can replace one of your balls on the playing surface"
+            - "All shots require a canon shot, where possible"
+            - "All shots have to be doubled"
+        -
+            - "Corner pockets are not to be used."
+            - "Side pockets are not to be used."
+            - "Top pockets are not to be used."
+            - "The left hand side pockets are not to be used."
+        -
+            - "White and Black balls switch roles."
+        -
+            - "Not potting on the break is foul."
+        -
+            - "The person to break gets 3 shots at the start"
+            - "The person to break gets 4 shots at the start"
+            - "The person to not break gets 3 shots when its their go, unless a foul breaks"
+            - "The person to not break gets 4 shots when its their go, unless a foul breaks"
+        -
+            - "After the break the black is put in the corner pocket."
+            - "After each shot, the black is put back on the spot - if possible."
+            - "Each shot you should pot the black and every time you do, you can remove one of your balls from the table. Your opponent replaces the black ball."
+        -
+            - "The White and Black balls must be potted in one shot to win."
+        -
+            - "Any foul loses the game."
+            - "No two shots for a foul."
+            - "After a foul, you must get a 20 darts - only 3 darts per 1 opponent turn"
+            - "After a foul, you opponent can take as many shots as they like for 30 seconds."
+        -
+            - "Call on all Pockets"
+            - "Call on black"
+            - "Opponent calls pocket on black"
+            - "Opponent calls pocket on all shots"
+            - "You must choose a pocket at the start of the game to pot all your balls."
+
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        # automatically injects dependencies in your services
+        autowire: true
+        # automatically registers your services as commands, event subscribers, etc.
+        autoconfigure: true
+        # this means you cannot fetch services directly from the container via $container->get()
+        # if you need to do this, you can override this setting on individual services
+        public: false
+
+    # makes classes in src/AppBundle available to be used as services
+    # this creates a service per class whose id is the fully-qualified class name
+    AppBundle\:
+        resource: '../../src/AppBundle/*'
+        # you can exclude directories or files
+        # but if a service is unused, it's removed anyway
+        exclude: '../../src/AppBundle/{Entity,Repository,Tests}'
+
+    # controllers are imported separately to make sure they're public
+    # and have a tag that allows actions to type-hint services
+    AppBundle\Controller\:
+        resource: '../../src/AppBundle/Controller'
+        public: true
+        tags: ['controller.service_arguments']
+
+    AppBundle\Service\RuleService:
+        class: AppBundle\Service\RuleService
+        arguments: ['%rules%']

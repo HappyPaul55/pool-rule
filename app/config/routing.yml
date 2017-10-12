@@ -1,0 +1,3 @@
+generate:
+    path: /
+    defaults: { _controller: AppBundle:Default:generate }
