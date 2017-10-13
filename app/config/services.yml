@@ -15,41 +15,45 @@ parameters:
             - "All shots must include a cushion hit"
             - "The cue ball must hit a cushion, if you pot"
             - "The cue ball must hit a cushion, on every shot"
+            - "The cue ball must hit any of the left cushions, on every shot"
+            - "The cue ball must hit any of the right cushions, if you pot"
             - "Any potted ball must hit a cushion, if you pot"
             - "Instead of having another shot on a foul, the opponent can replace one of your balls on the playing surface"
             - "All shots require a canon shot, where possible"
             - "All shots have to be doubled"
         -
-            - "Corner pockets are not to be used."
-            - "Side pockets are not to be used."
-            - "Top pockets are not to be used."
-            - "The left hand side pockets are not to be used."
+            - "Corner pockets are not to be used"
+            - "Side pockets are not to be used"
+            - "Top pockets are not to be used"
+            - "The left hand side pockets are not to be used"
+            - "The right hand side pockets are not to be used"
         -
-            - "White and Black balls switch roles."
+            - "White and Black balls switch roles"
+            - "You must miss every other shot"
         -
-            - "Not potting on the break is foul."
+            - "Not potting on the break is foul"
         -
             - "The person to break gets 3 shots at the start"
             - "The person to break gets 4 shots at the start"
             - "The person to not break gets 3 shots when its their go, unless a foul breaks"
             - "The person to not break gets 4 shots when its their go, unless a foul breaks"
         -
-            - "After the break the black is put in the corner pocket."
-            - "After each shot, the black is put back on the spot - if possible."
-            - "Each shot you should pot the black and every time you do, you can remove one of your balls from the table. Your opponent replaces the black ball."
+            - "After the break the black is put in the corner pocket"
+            - "After each shot, the black is put back on the spot - if possible"
+            - "Each shot you should pot the black and every time you do, you can remove one of your balls from the table. Your opponent replaces the black ball"
         -
-            - "The White and Black balls must be potted in one shot to win."
+            - "The White and Black balls must be potted in one shot to win"
         -
-            - "Any foul loses the game."
-            - "No two shots for a foul."
+            - "Any foul loses the game"
+            - "No two shots for a foul"
             - "After a foul, you must get a 20 darts - only 3 darts per 1 opponent turn"
-            - "After a foul, you opponent can take as many shots as they like for 30 seconds."
+            - "After a foul, you opponent can take as many shots as they like for 30 seconds"
         -
             - "Call on all Pockets"
             - "Call on black"
             - "Opponent calls pocket on black"
             - "Opponent calls pocket on all shots"
-            - "You must choose a pocket at the start of the game to pot all your balls."
+            - "You must choose a pocket at the start of the game to pot all your balls"
 
 services:
     # default configuration for services in *this* file
