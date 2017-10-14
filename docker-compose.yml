@@ -3,7 +3,9 @@ version: '3'
 services:
     web:
         build: .
+        environment:
+            - 'SecretThatShouldBeChanged'
         ports:
             - "8900:80"
-        volumes:
-            - .:/app
+#        volumes:
+#            - .:/app
